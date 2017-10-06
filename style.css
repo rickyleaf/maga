@@ -1,0 +1,134 @@
+body {
+    margin: 0;
+    background-color:black;
+    height: auto;
+    max-width: 100vw;
+    overflow-x: hidden;
+}
+
+#content {
+    position: absolute;
+    z-index: 1;
+    max-width: 100%;
+    min-height: 100%;
+    font-size: 1.7em;
+    color: white;
+    padding: 0px 30px;
+}
+
+#parallax {
+    position: fixed;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.parallax-image {
+    position: absolute;
+}
+
+.onappear {
+    overflow: hidden;
+}
+
+.alternateLorum {
+    background-color: white;
+    color:black;
+}
+
+.quotesStart,
+.quotesEnd {
+    display: inline-block;
+    font-size: 2.5em;
+    width: 0.4em;
+}
+.quotesStart:before,
+.quotesEnd:before {
+    content: "\201C";
+    opacity: 0;
+}
+
+.quotesStart:after {
+    content: "\201C";
+    position: absolute;
+    opacity: 0;
+    margin-top: -10px;
+    left: -50px;
+    transition: left 500ms 500ms,
+                opacity 500ms 500ms;
+}
+.animationStart.quotesStart:after {
+    opacity: 1;
+    left: 30px;
+}
+
+.headline {
+    white-space: nowrap;
+    margin-top: -70px;
+    margin-left: -100%;
+    transition: margin-left 1000ms;
+}
+.animationStart.headline {
+    margin-left: 40px;
+}
+
+.subtitle {
+    white-space: nowrap;
+    margin-top: -80px;
+    margin-bottom: 40px;
+    margin-left: 120%;
+    transition: margin-left 1000ms 200ms;
+}
+.animationStart.subtitle {
+    margin-left: 100px;
+}
+
+.quotesEnd:after {
+    content: "\201D";
+    position: absolute;
+    opacity: 0;
+    margin-top: 30px;
+    margin-bottom: 40px;
+    right: -50px;
+    transition: right 500ms 700ms,
+                opacity 500ms 700ms;
+    /*WORKAROUND, HAVE TO SET THE TIMEOUT IN PARALLAX.JS TO BE THE TRANSITION AMOUNT ABOVE*/
+}
+.animationStart.quotesEnd:after {
+    display: block;
+    opacity: 1;
+    right: 30px;
+}
+.hide.quotesEnd:after {
+    display: none;
+}
+
+.letterbox-parent {
+    width: 100%;
+    overflow: hidden;
+}
+
+.letterbox-image {
+    width: 100%;
+}
+
+.fade-parent {
+    position: relative;
+    width: 100%;
+}
+.fade {
+    position: absolute;
+    width: 100%;
+}
+.fade-new {
+    opacity: 0;
+}
+
+.hiding-parent {
+    width: 100%;
+    overflow: hidden;
+}
+
+.hiding-image {
+    width: 100%;
+}
