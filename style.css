@@ -32,24 +32,22 @@ body {
 }
 
 .alternateLorum {
-    background-color: white;
-    color:black;
+
 }
 
 .quotesStart,
 .quotesEnd {
     display: inline-block;
     font-size: 2.5em;
-    width: 0.4em;
 }
 .quotesStart:before,
 .quotesEnd:before {
-    content: "\201C";
+    content: "This is a";
     opacity: 0;
 }
 
 .quotesStart:after {
-    content: "\201C";
+    content: "This is a";
     position: absolute;
     opacity: 0;
     margin-top: -10px;
@@ -84,10 +82,10 @@ body {
 }
 
 .quotesEnd:after {
-    content: "\201D";
+    content: "pull quote";
     position: absolute;
     opacity: 0;
-    margin-top: 30px;
+    margin-top: -30px;
     margin-bottom: 40px;
     right: -50px;
     transition: right 500ms 700ms,
